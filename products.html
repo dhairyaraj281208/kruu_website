@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Vaci-Pro</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: Courier, monospace, serif;
+			font-weight: bold;
+			line-height: 1.6em;
+		}
+
+		body {
+			background: rgb(196, 240, 255);		}
+
+		.heading {
+			font-size: 42px;
+			left: 10px;
+			margin-right: 75px;
+			text-decoration: none;
+			margin-left: 37px;
+			color: black;
+			top: -5px;
+			position: absolute;
+		}
+
+		header {
+			position: sticky;
+			width: 100%;
+			top: 0 !important;
+			z-index: 4;
+		}
+
+		.navbar {
+			width: 100%;
+			height: 50px;
+			display: flex;
+
+		}
+
+		.navbar li {
+			display: inline-block;
+			list-style-type: none;
+
+
+		}
+
+		.nav {
+			background: transparent;
+			border-radius: 50px;
+			width: fit-content;
+			margin: auto 0px;
+			position: absolute;
+			top: 0px;
+			left: 35%;
+
+		}
+
+		.search-box {
+        position: absolute;
+        top: 24px;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        background: #2C3441;
+        height: 40PX;
+        border-radius: 40PX;
+
+    }
+
+    .search-box:hover>input {
+        width: 200px;
+        padding: 0 10px;
+    }
+
+    .search-box:hover>.icon {
+        background: #536179;
+    }
+
+    .icon:hover {
+        transform: rotate(360deg) scale(0.8);
+    }
+
+    input {
+        width: 0;
+        border: none;
+        outline: none;
+        padding: 0;
+        background: none;
+        font-size: 1.1rem;
+        transition: 0.5s ease;
+        line-height: 40px;
+        color: #fff;
+    }
+
+    .icon {
+        color: #21dfcd;
+        float: right;
+        width: 40px;
+        font-size: 1.3rem;
+        height: 40px;
+        border-radius: 50%;
+        background: #2f3640;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+		.nav ul {
+			display: flex;
+			justify-content: space-around;
+			padding: 4px;
+
+		}
+
+		.nav li {
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+			padding: 6px 12px;
+			transition: 200ms ease-in-out;
+			cursor: pointer;
+			border-radius: 50px;
+			color: white;
+		}
+
+		.nav li a {
+			padding: 6px;
+			text-decoration: none;
+			color: white;
+
+		}
+
+		.nav ul li:hover {
+
+			color: #ffffff;
+			background: linear-gradient(45deg, #051ee0, #f40096);
+
+		}
+
+		.nav ul li:hover a {
+			color: #ffffff;
+		}
+
+		.btn .join {
+			padding: 5px 10px;
+			background: transparent;
+			border: none;
+			font-size: 20px;
+			transition: 200ms ease-in-out;
+		}
+
+		.join:hover {
+			background: linear-gradient(45deg, #051ee0, #f40096);
+			border-radius: 25px;
+
+		}
+
+		.btn {
+			display: flex;
+			position: absolute;
+			top: 5px;
+			right: 20px;
+			gap: 25px;
+		}
+
+		.background {
+			background: rgb(196, 240, 255);
+
+		}
+
+		
+
+		/*.........Products..............*/
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: Courier, monospace, serif;
+			font-weight: bold;
+			line-height: 1.6em;
+		}
+
+		.image {
+			background-image: url("https://source.unsplash.com/1500x900/?books");
+		}
+
+		.button {
+			background-color: green;
+			padding: 10px;
+			border: none;
+			border-radius: 50px;
+			
+			display: flex;
+			margin-top: 30px;
+			transition: 500ms;
+			flex-wrap: wrap;
+		}
+
+		.produce {
+			font-family: "Courier", monospace;
+			font-size: 40px;
+			justify-content: center;
+			display: flex;
+			margin-bottom: 50px;
+			margin-top: 80px;
+		}
+
+		.item {
+			max-width: 320px;
+			border: 0.5px solid black;
+			border-radius: 25px;
+			padding: 50px;
+			align-items: center;
+			justify-content: center;
+			transition: 800ms;
+			margin-top: 50px ;
+		}
+
+		.items {
+			/* margin-left: 55px; */
+			display: flex;
+			/* gap: 75px; */
+			justify-content: space-evenly;
+
+		}
+
+		.item img {
+			border-radius: 25px;
+		}
+
+		.item-name {
+			justify-content: center;
+			display: flex;
+			margin-bottom: 16px;
+		}
+
+		.item:hover {
+			scale: 1.1;
+			cursor: pointer;
+			color: white;
+			background-color: black;
+		}
+
+		.button:hover {
+			scale: 1.5;
+			color: white;
+			padding: 20px, 0px;
+		}
+
+		.fixed {
+			height: 55px;
+			width: 100%;
+			position: fixed;
+		}
+		.bottom{
+			margin-bottom: 70px ;
+		}
+	</style>
+</head>
+
+<body class="background">
+	<header class="fixed" style="background: rgb(24, 24, 100)" ;>
+		<nav class="navbar">
+			<a class="heading" href="E-Commerce.html" style="color: white;">Vaci-Pro</a>
+			<ul>
+				<div class="nav">
+					<ul>
+						<li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="feather feather-home">
+								<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+								<polyline points="9 22 9 12 15 12 15 22"></polyline>
+							</svg><a href="E-Commerce.html">Home</a></li>
+						<li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="feather feather-user">
+								<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+								<circle cx="12" cy="7" r="4"></circle>
+							</svg><a href="about.html">Help</a></li>
+						<li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="feather feather-list">
+								<line x1="8" y1="6" x2="21" y2="6"></line>
+								<line x1="8" y1="12" x2="21" y2="12"></line>
+								<line x1="8" y1="18" x2="21" y2="18"></line>
+								<line x1="3" y1="6" x2="3.01" y2="6"></line>
+								<line x1="3" y1="12" x2="3.01" y2="12"></line>
+								<line x1="3" y1="18" x2="3.01" y2="18"></line>
+							</svg><a href="contact.html">Contact Us</a></li>
+
+					</ul>
+				</div>
+
+
+			</ul>
+			<div class="search-box">
+                <input type="text" placeholder="search......">
+                <a href="##" class="icon">
+                    <i class="fa fa-search"></i>
+                </a>
+            </div>
+			
+
+			<div class="btn">
+				<button class="join" style="padding: 6px ;text-decoration: none;color: white ;">Join</button>
+				<button class="join" style="padding: 6px ;text-decoration: none;color: white ;"><svg
+					xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					class="feather feather-shopping-bag">
+					<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+					<line x1="3" y1="6" x2="21" y2="6"></line>
+					<path d="M16 10a4 4 0 0 1-8 0"></path>
+				</svg></button>
+			</div>
+		</nav>
+	</header>
+
+	<!-- .....product..... -->
+
+	<div class="shop background">
+		<p class="produce">Our Products</p>
+
+		<div class="items">
+			<div class="item">
+				<p class="item-name">
+					HPV vaccine 
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: HPV vaccine which protects against types of human papillomaviruses (HPV) that cause most cervical, anal, and other cancers, as well as genital warts. This vaccine should be taken by everyone through the age of 26. If anyone wants to get vaccinated by this vaccine, they should talk to their doctor for the benefits for taking this vaccine.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+
+			<div class="item">
+				<p class="item-name">
+					Hepatitis B vaccine
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: This vaccine is recommended for all adults age 19 through 59 years. It gives immunity from hepatitis B which can cause serious health problems, including liver damage, cirrhosis, liver cancer, and even death.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+
+			<div class="item">
+				<p class="item-name">
+					Shingles vaccine
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: This vaccine protects from getting shingles and the complications from this disease. This vaccine is recommended for adults above 50 years.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+
+			<div class="item">
+				<p class="item-name">
+					Seasonal flu (influenza) vaccine
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: All adults above 18 years should get this vaccine every year. Flu vaccine is especially important for people with chronic health conditions, pregnant women, and older adults</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+			</div>
+			<div class="items">
+			<div class="item">
+				<p class="item-name">
+					Tdap vaccine
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: Between 27 and 36 weeks of pregnancy. This vaccine is for pregnant women, which gives immunity from whooping cough.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+
+			<div class="item">
+				<p class="item-name">
+					The flu shot
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: Only during flu season(October through May) to help protect against influenza. This vaccine is also for pregnant women.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+
+			<div class="item">
+				<p class="item-name">
+					Pneumococcal vaccine
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: This vaccine protects against pneumonia and other serious pneumococcal diseases. If you have cancer or other immunocompromising conditions.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+
+			<div class="item">
+				<p class="item-name">
+					MMR vaccine
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: MMR vaccine to protect against measles, mumps, and rubella if you were born in 1957 or after and have not gotten this vaccine or do not have immunity to these diseases.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+		</div>
+			<div class="items bottom">
+			<div class="item">
+				<p class="item-name">
+					Varicella vaccine 
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description: This vaccine is to protect against chickenpox if you were born in 1980 or after and have not gotten two doses of this vaccine or do not have immunity to this disease</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+			
+			<div class="item">
+				<p class="item-name">
+					Hib vaccine
+				</p>
+				<img src="https://source.unsplash.com/200x200/?products" alt="" class="product-img">
+
+				<p class="cost">Price: $20</p>
+				<p class="discount">Discount: 10%</p>
+				<p class="description">Description:  This vaccine is to protect against Hemophilus influenzae type b (Hib) if you were not previously vaccinated with the vaccine.</p>
+				<button class="button" href="#">Add To cart</button>
+			</div>
+		</div>
+
+		</div>
+
+
+	</div>
+
+</body>
+
+</html>

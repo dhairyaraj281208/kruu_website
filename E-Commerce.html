@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaci-Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Courier New', monospace;
+
+    }
+
+    body {
+        background: rgb(196, 240, 255);
+        height: 100%;
+
+    }
+
+    header {
+        position: sticky;
+        width: 100%;
+        top: 0 !important;
+        z-index: 4;
+    }
+
+    .heading {
+        font-size: 42px;
+        left: 10px;
+        margin-right: 75px;
+        margin-left: 37px;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 50px;
+        display: flex;
+
+    }
+
+    .navbar li {
+        display: inline-block;
+        list-style-type: none;
+
+
+    }
+
+    .nav {
+        background: transparent;
+        border-radius: 50px;
+        width: fit-content;
+        margin: auto 0px;
+        position: absolute;
+        top: 0px;
+        left: 38%;
+
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 4px;
+
+    }
+
+    .nav li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        padding: 6px 12px;
+        transition: 200ms ease-in-out;
+        cursor: pointer;
+        color: white;
+        
+    }
+
+    .nav li a {
+        padding: 6px;
+        text-decoration: none;
+        color: white;
+
+    }
+
+    .nav ul li:hover {
+        border-radius: 50px;
+        color: #ffffff;
+        background: linear-gradient(45deg, #e68617, #910bc2);
+
+    }
+
+    .nav ul li:hover a {
+        color: #ffffff;
+    }
+
+    .btn .join {
+        padding: 5px 10px;
+        background: transparent;
+        border: none;
+        font-size: 20px;
+        transition: 200ms ease-in-out;
+        cursor: pointer;
+		
+    }
+
+    .sign:hover {
+        background: linear-gradient(45deg, #e68617, #910bc2);
+        border-radius: 25px;
+		scale: 1.3;
+    }
+
+    .cart svg:hover {
+        color: black;
+    }
+
+    .btn {
+        display: flex;
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        gap: 25px;
+    }
+
+    .background {
+        
+        background: rgb(255, 156, 70);
+    }
+
+    .cart {
+        margin-top: -2px;
+
+    }
+
+    .navbar p a {
+        text-decoration: none;
+        color: white;
+    }
+
+    /* .........slider effect for items....... */
+
+    .slider-main {
+        width: 94%;
+        height: 450px;
+        position: absolute;
+        left: 50%;
+        top: 44%;
+        background-image: url("covid-vaccination-fb.jpg");
+        background-size: 50% 100%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        box-shadow: 0 14px 28px rgb(250, 187, 197);
+    }
+
+    .para {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, white, rgb(250, 187, 197));
+        padding: 30px 25px;
+        border-radius: 0 30px 30px 0;
+    }
+
+
+    /* ........product-card......... */
+
+    .gallery h3 {
+        text-align: center;
+        font-size: 30px;
+        margin: 0;
+        padding-top: 10px;
+
+    }
+
+    .gallery {
+        text-decoration: none;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0px;
+        margin-top: 570px;
+    }
+
+    .content {
+        width: 20%;
+        margin: 15px;
+        box-sizing: border-box;
+        float: left;
+        text-align: center;
+        border-radius: 20px;
+        cursor: pointer;
+        padding-top: 10px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+        transition: .4s;
+        background: #f2f2f2;
+    }
+
+    .content:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        transform: translate(0px, -8px);
+
+    }
+
+    .gallery img {
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+
+    }
+
+    .gallery p {
+        text-align: center;
+        color: #b2bec3;
+        padding-top: 0 8px;
+
+    }
+
+    .gallery h6 {
+        font-size: 26px;
+        text-align: center;
+        color: #222f3e;
+        margin: 0;
+    }
+
+    .gallery ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .gallery li {
+        padding: 5px;
+
+    }
+
+    .fa {
+        font-size: 26px;
+        transition: .4s;
+        /* margin: 3px ; */
+
+    }
+
+    .checked {
+        color: #ff9f43;
+    }
+
+    .fa:hover {
+        transform: scale(1.3);
+        transition: .6s;
+
+    }
+
+    .gallery button {
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        width: 100%;
+        padding: 15px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        margin-top: 5px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+    }
+
+    .buy-1 {
+        background: #2183a2;
+    }
+
+    .buy-2 {
+        background: #3b3e6e;
+    }
+
+    .buy-3 {
+        background: #0b0b0b;
+    }
+
+    .buy-4 {
+        background: #ff9f43;
+    }
+
+    @media(max-width:1000px) {
+        .content {
+            width: 45%;
+        }
+    }
+
+    @media(max-width:750px) {
+        .content {
+            width: 100%;
+        }
+    }
+
+
+    /* .....lets have a chat....... */
+    .chat-box {
+        transform: translate(-50%, -50%);
+        background: #2C3441;
+        height: 40PX;
+        width: 40px;
+        border-radius: 40PX;    
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 10;
+    }
+
+    .chat-box:hover>.icon-chat {
+        background: #536179;
+    }
+
+    .icon-chat:hover {
+        transform: rotate(-30deg) scale(0.8);
+    }
+    .icon-chat {
+        color: #21dfcd;
+        float: right;
+        width: 40px;
+        font-size: 1.3rem;
+        height: 40px;
+        border-radius: 50%;
+        background: #2f3640;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    /* .............sub--help.................. */
+
+.sub-contact{
+    display: none;
+    transition: 5s ease-in-out;
+    top: -244px;
+    position: absolute;
+
+}
+.nav ul li:hover .sub-contact{
+    display: block;
+    position: absolute;
+    margin-top:  140px ;
+    margin-left: 15px;
+   
+} 
+.nav ul li:hover .product{
+    margin-top:  290px !important ;
+}
+
+
+.nav ul li:hover .sub-contact .sub-list {
+    display: block ;
+    transition: 500ms ease-in-out;
+} 
+
+.nav ul li:hover .sub-contact .sub-list .sub {
+    width: 150px ;
+    padding: 2px ;
+    
+}
+.nav ul li:hover .sub-contact .sub-list .sub a {
+    color: black;
+    font-weight: 700;
+    padding: 2.5px 10px ;
+    background-color: #ffffff;
+    width: 150px;
+    border-radius: 25px;
+    font-size: 20px;
+    top: 25px;
+}
+</style>
+
+<body>
+
+    <!-- .......header part ........ -->
+
+
+    <header class="background">
+        <nav class="navbar ">
+            <p class="heading"><a href="E-Commerce.html">Vaci-Pro</a> </p>
+            <ul>
+                <div class="nav">
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-home">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg><a href="#">Home</a></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-package">
+                                <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg><a href="products.html">Vaccines</a>
+                        
+                            <div class="sub-contact product">
+                                <ul class="sub-list">
+                                    <li class="sub"><a href="products.html">HPV vaccine</a></li>
+                                    <li class="sub"><a href="products.html">Hepatitis B vaccine</a></li>
+                                    <li class="sub"><a href="products.html">Shingles vaccine</a></li>
+                                    <li class="sub"><a href="products.html">Seasonal flu (influenza) vaccine</a></li>
+                                    <li class="sub"><a href="products.html">Tdap vaccine</a></li>
+                                    <li class="sub"><a href="products.html">The flu shot</a></li>
+                                    <li class="sub"><a href="products.html">Pneumococcal vaccine</a></li>
+                                </ul>
+                                
+                            </div>
+                        
+                        </li>
+
+
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-list">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg><a href="contact.html">Contact Us</a></li>
+
+
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-user">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg><a href="about.html">Help</a>
+                        
+                            <div class="sub-contact">
+                                <ul class="sub-list">
+                                    <li class="sub"><a href="about.html">Payment</a></li>
+                                    <li class="sub"><a href="about.html">Delivery</a></li>
+                                    <li class="sub"><a href="about.html">FAQ</a></li>
+                                </ul>
+                                
+                            </div>
+                        
+                        </li>
+
+
+                    </ul>
+                </div>
+
+
+            </ul>
+
+
+            <div class="btn">
+                <button class="join sign" style="padding: 6px ;text-decoration: none;color: white ;">Join</button>
+                <button class="join cart" style="padding: 6px ;text-decoration: none;color: white ;"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-shopping-bag">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg></button>
+            </div>
+        </nav>
+    </header>
+    <!-- ..........lets have a chat....... -->
+    <div class="chat-box">
+
+        <a href="contact.html" class="icon-chat">
+            <i class="fa fa-comments"></i>
+        </a>
+    </div>
+
+    <!-- ......... slider part ......... -->
+
+
+    <div class="slider-main">
+        <div class="para">
+            <h1>
+                Adult Vaccination
+            </h1>
+            <br><br>
+            <p>Vaccinations are readily available for such common adult illnesses as influenza (flu), pneumococcal disease, herpes zoster (shingles), human papillomavirus (HPV), pertussis (whooping cough), hepatitis A and hepatitis B. Vaccinations against less common diseases such as measles, mumps, rubella (German measles), tetanus (lockjaw), diphtheria and varicella (chickenpox) are also needed by some adults. The Centers for Disease Control and Prevention’s (CDC) recommendations clearly identify people who are at risk for these diseases and who should be immunized to prevent these diseases and their complications. Consult yourhealthcare provider or local health department regarding your own immunization status as well as current immunization recommendations.
+                All adults require tetanus and diphtheria (Td) immunizations at 10 year intervals throughout their lives.</p>
+            <br><br>
+            <button class="join sign" style="
+			padding: 6px ;
+            background-color: transparent;
+            color: black ;
+            border: 0px ;
+            font-size: 30px ;
+            border: 1px solid black;
+            border-radius: 15px ;
+            transition: 400ms;
+            margin-top: -30px;
+            ">
+                Lets Buy</button>
+        </div>
+
+    </div>
+
+    <!-- ........product-card......... -->
+
+    <div class="gallery">
+        <div class="content">
+            <img src="text.jpg">
+            <h3>HPV vaccine</h3>
+            <p>HPV vaccine which protects against types of human papillomaviruses (HPV) that cause most cervical, anal, and other cancers, as well as genital warts. This vaccine should be taken by everyone through the age of 26. If anyone wants to get vaccinated by this vaccine, they should talk to their doctor for the benefits for taking this vaccine.</p>
+            <h6>$100.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+            </ul>
+
+            <button class="buy-1">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="content">
+            <img src="text2.jpg">
+            <h3>Hepatitis B vaccine</h3>
+            <p>This vaccine is recommended for all adults age 19 through 59 years. It gives immunity from hepatitis B which can cause serious health problems, including liver damage, cirrhosis, liver cancer, and even death.</p>
+            <h6>$100.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+            </ul>
+
+            <button class="buy-2">
+                Buy Now
+            </button>
+        </div>
+
+
+        <div class="content">
+            <img src="logooo.jpg">
+            <h3>Shingles vaccine</h3>
+            <p>This vaccine protects from getting shingles and the complications from this disease. This vaccine is recommended for adults above 50 years.</p>
+            <h6>$100.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+            </ul>
+
+            <button class="buy-3">
+                Buy Now
+            </button>
+        </div>
+
+
+        <div class="content">
+            <img src="123.jpeg">
+            <h3>Seasonal flu (influenza) vaccine</h3>
+            <p>All adults above 18 years should get this vaccine every year. Flu vaccine is especially important for people with chronic health conditions, pregnant women, and older adults</p>
+            <h6>$100.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+            </ul>
+
+            <button class="buy-4">
+                Buy Now
+            </button>
+        </div>
+
+
+            <div class="content">
+                <img src="text.jpg">
+                <h3>Tdap vaccine</h3>
+                <p>Between 27 and 36 weeks of pregnancy. This vaccine is for pregnant women, which gives immunity from whooping cough.</p>
+                <h6>$100.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                </ul>
+    
+                <button class="buy-1">
+                    Buy Now
+                </button>
+            </div>
+    
+            <div class="content">
+                <img src="text2.jpg">
+                <h3>The flu shot</h3>
+                <p>Only during flu season(October through May) to help protect against influenza. This vaccine is also for pregnant women.</p>
+                <h6>$100.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                </ul>
+    
+                <button class="buy-2">
+                    Buy Now
+                </button>
+            </div>
+    
+    
+            <div class="content">
+                <img src="logooo.jpg">
+                <h3>Pneumococcal vaccine</h3>
+                <p>This vaccine protects against pneumonia and other serious pneumococcal diseases. If you have cancer or other immunocompromising conditions.</p>
+                <h6>$100.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                </ul>
+    
+                <button class="buy-3">
+                    Buy Now
+                </button>
+            </div>
+    
+    
+            <div class="content">
+                <img src="123.jpeg">
+                <h3>MMR vaccine</h3>
+                <p>MMR vaccine to protect against measles, mumps, and rubella if you were born in 1957 or after and have not gotten this vaccine or do not have immunity to these diseases.</p>
+                <h6>$100.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                </ul>
+    
+                <button class="buy-4">
+                    Buy Now
+                </button>
+            </div>
+
+
+</body>
+
+</html>
